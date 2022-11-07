@@ -1183,6 +1183,20 @@ class UnitedKingdomTest(GenericCalendarTest):
         self.assertIn(date(2022, 12, 26), holidays)  # Boxing Day
         self.assertIn(date(2022, 12, 27), holidays)  # Christmas Day
 
+    def test_2023(self):
+        year = 2023
+        holidays = self.cal.holidays_set(year)
+        self.assertIn(date(year, 1, 2), holidays)  # New Year
+        self.assertIn(date(year, 4, 7), holidays)  # Good Friday
+        self.assertIn(date(year, 4, 10), holidays)  # Easter Monday
+        self.assertIn(date(year, 5, 1), holidays)  # Early May Bank Holiday
+        # Coronation of His Majesty King Charles III
+        self.assertIn(date(year, 5, 8), holidays)
+        self.assertIn(date(year, 5, 29), holidays)  # Spring Bank Holiday
+        self.assertIn(date(year, 8, 28), holidays)  # Summer bank holiday
+        self.assertIn(date(year, 12, 25), holidays)  # Christmas Day
+        self.assertIn(date(year, 12, 26), holidays)  # Boxing Day
+
 
 class UnitedKingdomNorthernIrelandTest(UnitedKingdomTest):
     cal_class = UnitedKingdomNorthernIreland
